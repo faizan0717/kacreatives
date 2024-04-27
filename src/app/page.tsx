@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import { HoverEffect } from "../ui/card-hover-effect";
+import { Analytics } from "@vercel/analytics/react"
 
 const ka_font = Oswald({
   subsets: ['latin'],
@@ -266,7 +267,7 @@ const OurProducts = () => {
               src="/images/scan_madi_baner.png"
               height="1000"
               width="1000"
-              className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+              className="h-60 w-full object-cover group-hover/card:shadow-xl"
               alt="thumbnail"
             />
           </CardItem>
@@ -550,6 +551,7 @@ const OurServices = () => {
 export default function Home() {
   return (
     <div className="bg-black">
+      <Analytics/>
       <Navbar />
       <HeroSection />
       <div className="flex flex-row items-center justify-center mb-10 w-full">
