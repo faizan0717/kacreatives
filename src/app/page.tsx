@@ -149,7 +149,7 @@ const cards = [
   },
 ];
 
-export function TypewriterEffectSmoothDemo() {
+const TypewriterEffectSmoothDemo = () => {
   const words = [
     {
       text: "Kick",
@@ -520,7 +520,7 @@ const Footer = () => {
   )
 }
 
-export const projects = [
+const projects = [
   {
     "title": "Branding",
     "description": "Helping your business establish a strong brand identity through logo design, color schemes, typography, and visual elements.",
@@ -545,6 +545,8 @@ const OurServices = () => {
     </div>
   )
 }
+
+
 export default function Home() {
   return (
     <div className="bg-black">
