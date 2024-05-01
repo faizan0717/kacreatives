@@ -11,6 +11,7 @@ import Image from "next/image";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import { HoverEffect } from "../ui/card-hover-effect";
 import { Analytics } from "@vercel/analytics/react"
+import { Button } from "../ui/moving-border";
 
 const ka_font = Oswald({
   subsets: ['latin'],
@@ -384,7 +385,22 @@ const OurProducts = () => {
   );
 };
 
+// const MovingBorder = () => {
+
+
+
+//   return (
+ 
+//   );
+// }
+
 const ContactUs = () => {
+
+  const contactInfo = {
+    phNo: +918884818405,
+    email: "help@kacreatives.in"
+  }
+
   return (
     <div className="lg:flex">
       <div className="lg:w-1/2">
@@ -392,7 +408,7 @@ const ContactUs = () => {
           <div className="flex items-center justify-center ">
             <PinContainer
               title="Take me to whatsapp"
-              href="https://twitter.com/mannupaaji"
+              // href="https://whatsapp.com/"
             >
               <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
@@ -418,12 +434,24 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="lg:w-1/2">
+      <div className="lg:w-1/2 m-8">
         <div className="p-4">
-          <h3>Call Us</h3>
-          <p>566565165161651s</p>
-          <h3>Emain</h3>
-          <p>Phone numbers</p>
+          <h3 className="text-2xl font-semibold">Call Us :  
+            <Button borderRadius="1.75rem" className="m-1 bg-white text-black dark:text-white border-neutral-200">
+              {contactInfo.phNo}
+            </Button>
+         </h3>
+          <h3 className="text-2xl font-semibold mt-2">Email :
+             <Button borderRadius="1.75rem" className="m-1 bg-white text-black dark:text-white border-neutral-200">
+              {contactInfo.email}
+            </Button>
+          </h3>
+          {/* <p>Phone numbers</p> */}
+
+          <h3 className="text-2xl font-semibold m-8">Or Connect through WhatsApp</h3>
+          <div>
+            <img src="/images/left_arrow.gif" className="h-32 -rotate-45"></img>
+          </div>
         </div>
       </div>
     </div>
@@ -437,20 +465,20 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
-              <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Flowbite</span>
+            <a href="https://kacreatives.in/" target="_blank" className="flex items-center">
+              <img src="/images/ka_logo_white.png" className="h-8 me-3" alt="KA Logo" />
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">KA Creatives</span>
             </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Resources</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Our Work</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">Flowbite</a>
+                  <a href="https://scanmadi.com/" target="_blank" className="hover:underline">Scanಮಾಡಿ</a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
+                  <a href="https://tailwindcss.com/" target="_blank" className="hover:underline">Tailwind CSS</a>
                 </li>
               </ul>
             </div>
@@ -458,10 +486,10 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase text-white">Follow us</h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
+                  <a href="https://www.instagram.com/ka_creatives_" target="_blank" className="hover:underline ">Instagram</a>
                 </li>
                 <li>
-                  <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Discord</a>
+                  <a href="https://discord.gg/4eeurUVvTy" target="_blank" className="hover:underline">Discord</a>
                 </li>
               </ul>
             </div>
@@ -480,9 +508,9 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Ka Creatives™</a>. All Rights Reserved.
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://kacreatives.in/" target="_blank" className="hover:underline">Ka Creatives™</a>. All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
+          {/* <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
               <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                 <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd" />
@@ -513,7 +541,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Dribbble account</span>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
