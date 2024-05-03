@@ -13,6 +13,7 @@ import { HoverEffect } from "../ui/card-hover-effect";
 import { Analytics } from "@vercel/analytics/react"
 import { Button } from "../ui/moving-border";
 
+
 const ka_font = Oswald({
   subsets: ['latin'],
   weight: ['400', '700']
@@ -27,7 +28,7 @@ const people = [
   },
   {
     id: 2,
-    name: "Syed Jalled",
+    name: "Syed Jaleed",
     designation: "Tech Head",
     image:
       "/images/jaleed.png",
@@ -188,7 +189,7 @@ const TypewriterEffectSmoothDemo = () => {
 
 const HeroSection = () => {
   return (
-    <div className="mt-24 md:mt-48 w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div id="homesection" className="mt-24 md:mt-48 w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className={`${ka_font.className} text-6xl lg:text-9xl font-bold text-center text-white relative z-20`}>
         Ka Creatives<span className="text-red-500">.</span>
       </h1>
@@ -217,37 +218,76 @@ const HeroSection = () => {
 };
 
 const Navbar = () => {
+  useEffect(() => {
+    const handleScrollToSection = (event, sectionId) => {
+      event.preventDefault();
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth",block: 'center' });
+      }
+    };
+    const addScrollListener = (linkId, sectionId) => {
+      const link = document.getElementById(linkId);
+      if (link) {
+        link.addEventListener("click", (event) => handleScrollToSection(event, sectionId));
+      }
+    };
+    addScrollListener("about-link", "scanmadi-section");
+    addScrollListener("services-link", "servicesection");
+    addScrollListener("contact-link", "contactsection");
+
+    return () => {
+      const removeScrollListener = (linkId) => {
+        const link = document.getElementById(linkId);
+        if (link) {
+          link.removeEventListener("click", handleScrollToSection);
+        }
+      };
+      removeScrollListener("about-link");
+      removeScrollListener("services-link");
+      removeScrollListener("contact-link");
+    };
+  }, []);
+
   return (
     <nav className="bg-opacity-30 bg-black backdrop-filter backdrop-blur-md py-4 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
         <div>
-          <img
-            src="/images/ka_logo_white.png"
-            alt="Your Logo"
-            className="h-8"
-          />
+          <Link href="https://www.kacreatives.in/">
+            <img
+              src="/images/ka_logo_white.png"
+              alt="Your Logo"
+              className="h-8"
+            />
+          </Link>
         </div>
-
-        {/* Navigation options */}
         <ul className="flex space-x-4">
-          <li className="text-black-800 hover:text-red-600 cursor-pointer">Home</li>
-          <li className="text-black-800 hover:text-red-600 cursor-pointer">About</li>
-          <li className="text-black-800 hover:text-red-600 cursor-pointer">Services</li>
-          <li className="text-black-800 hover:text-red-600 cursor-pointer">Contact</li>
+          <li className="text-black-800 hover:text-red-600 cursor-pointer">
+            <Link href="https://www.kacreatives.in/">Home</Link>
+          </li>
+          <li className="text-black-800 hover:text-red-600 cursor-pointer">
+            <a id="about-link" href="#scanmadi-section">Projects</a>
+          </li>
+          <li className="text-black-800 hover:text-red-600 cursor-pointer">
+            <a id="services-link" href="#servicesection">Services</a>
+          </li>
+          <li className="text-black-800 hover:text-red-600 cursor-pointer">
+            <a id="contact-link" href="#contactsection">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>
   );
 };
-
+  
 const handleSignUpScanMadi = () => {
   window.open("https://scanmadi.com/login", "_blank");
 };
 
 const OurProducts = () => {
   return (
-    <div className="lg:flex items-center justify-center">
+    <div id="scanmadi-section" ref={OurProducts} className="lg:flex items-center justify-center">
+      
       <CardContainer className="py-1 inter-var mx-2">
         <CardBody className="bg-black relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] border-white/[0.2]  w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
           <CardItem
@@ -261,7 +301,7 @@ const OurProducts = () => {
             translateZ="60"
             className="text-sm max-w-sm mt-2 text-neutral-300"
           >
-            A SaaS web app which allows restorent owner to provide Qr menu to their customers.
+            A SaaS web app which allows restaurant owner to provide Qr menu to their customers.
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4 border">
             <Image
@@ -306,7 +346,7 @@ const OurProducts = () => {
             translateZ="60"
             className="text-sm max-w-sm mt-2 text-neutral-300"
           >
-            A web application which will clean your scraped data to implove your Ai/Ml training.
+            A web application which will clean your scraped data to improve your Ai/ML training.
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4 border">
             <Image
@@ -402,7 +442,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="lg:flex">
+    <div id="contactsection" className="lg:flex">
       <div className="lg:w-1/2">
         <div className="p-4 items-center justify-center">
           <div className="flex items-center justify-center ">
@@ -569,7 +609,7 @@ const projects = [
 
 const OurServices = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8">
+    <div id="servicesection" className="max-w-5xl mx-auto px-8">
       <HoverEffect items={projects} />
     </div>
   )
