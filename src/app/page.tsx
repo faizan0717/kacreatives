@@ -232,7 +232,7 @@ const Navbar = () => {
         section.scrollIntoView({ behavior: "smooth",block: 'center' });
       }
     };
-    const addScrollListener = (linkId, sectionId) => {
+    const addScrollListener = (linkId: string, sectionId: string) => {
       const link = document.getElementById(linkId);
       if (link) {
         link.addEventListener("click", (event) => handleScrollToSection(event, sectionId));
@@ -244,10 +244,9 @@ const Navbar = () => {
     addScrollListener("blocks-link", "blogsection1");
 
     return () => {
-      const removeScrollListener = (linkId, sectionId) => {
+      const removeScrollListener = (linkId: string, sectionId: string) => {
         const link = document.getElementById(linkId);
         if (link) {
-          link.removeEventListener("click", handleScrollToSection);
           link.removeEventListener("click", (event) => handleScrollToSection(event, sectionId));
         }
       };
@@ -298,7 +297,7 @@ const handleSignUpScanMadi = () => {
 
 const OurProducts = () => {
   return (
-    <div id="scanmadi-section" ref={OurProducts} className="lg:flex items-center justify-center">
+    <div id="scanmadi-section" className="lg:flex items-center justify-center">
       
       <CardContainer className="py-1 inter-var mx-2">
         <CardBody className="bg-black relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] border-white/[0.2]  w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
