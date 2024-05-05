@@ -30,7 +30,7 @@ const people = [
     id: 2,
     name: "Khursan",
     designation: "Sales Head",
-    image: "/Images/khursan.jpg"
+    image: "/images/khursan.png"
   },
   {
     id: 3,
