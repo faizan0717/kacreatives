@@ -330,8 +330,7 @@ const OurProducts = () => {
               target="__blank"
               className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
             >
-              {/* Try now → */}
-              Coming Soon
+              Try now →
             </CardItem>
             <CardItem
               translateZ={20}
@@ -339,8 +338,7 @@ const OurProducts = () => {
               className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold"
               onClick={handleSignUpScanMadi}
             >
-               {/* Sign up */}
-               Coming Soon
+               Sign up
             </CardItem>
           </div>
         </CardBody>
@@ -423,14 +421,16 @@ const OurProducts = () => {
               target="__blank"
               className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
             >
-              Try now →
+               {/* Try now → */}
+               Coming Soon
             </CardItem>
             <CardItem
               translateZ={20}
               as="button"
               className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold"
             >
-              Sign up
+              {/* Sign up */}
+              Coming Soon
             </CardItem>
           </div>
         </CardBody>
