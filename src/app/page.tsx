@@ -232,7 +232,7 @@ const Navbar = () => {
         section.scrollIntoView({ behavior: "smooth",block: 'center' });
       }
     };
-    const addScrollListener = (linkId: string, sectionId: string) => {
+    const addScrollListener = (linkId, sectionId) => {
       const link = document.getElementById(linkId);
       if (link) {
         link.addEventListener("click", (event) => handleScrollToSection(event, sectionId));
@@ -241,11 +241,13 @@ const Navbar = () => {
     addScrollListener("about-link", "scanmadi-section");
     addScrollListener("services-link", "servicesection");
     addScrollListener("contact-link", "contactsection");
+    addScrollListener("blocks-link", "blogsection1");
 
     return () => {
-      const removeScrollListener = (linkId: string, sectionId: string) => {
+      const removeScrollListener = (linkId, sectionId) => {
         const link = document.getElementById(linkId);
         if (link) {
+          link.removeEventListener("click", handleScrollToSection);
           link.removeEventListener("click", (event) => handleScrollToSection(event, sectionId));
         }
       };
