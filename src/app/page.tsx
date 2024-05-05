@@ -28,52 +28,52 @@ const people = [
   },
   {
     id: 2,
+    name: "Khursan",
+    designation: "Sales Head",
+    image: "/Images/khursan.jpg"
+  },
+  {
+    id: 3,
     name: "Syed Jaleed",
     designation: "Tech Head",
     image:
       "/images/jaleed.png",
   },
   {
-    id: 3,
+    id: 4,
     name: "Fazal Ahmed",
     designation: "Product Manager & Finance",
     image:
       "/images/fazal.png",
   },
   {
-    id: 4,
+    id: 5,
     name: "Minhaj Ahmed",
     designation: "Marcketing & Operations",
     image:
       "/images/minhaj.png",
   },
   {
-    id: 5,
+    id: 6,
     name: "Sufiyan Ahmed",
     designation: "Legal",
     image:
       "/images/sufiyan.png",
   },
   {
-    id: 6,
+    id: 7,
     name: "Bashar",
     designation: "Engineering",
     image:
       "/images/bashar.png",
   },
   {
-    id: 7,
+    id: 8,
     name: "Tasleem",
     designation: "Engineering",
     image:
       "/images/tasleem.png",
   },
-  {
-    id: 8,
-    name: "Khursan",
-    designation: "Sales Head",
-    image: "/Images/khursan.jpg"
-  }
 ];
 
 const SkeletonOne = () => {
