@@ -226,26 +226,31 @@ const Navbar = () => {
         section.scrollIntoView({ behavior: "smooth",block: 'center' });
       }
     };
+
     const addScrollListener = (linkId, sectionId) => {
       const link = document.getElementById(linkId);
       if (link) {
         link.addEventListener("click", (event) => handleScrollToSection(event, sectionId));
       }
     };
+
     addScrollListener("about-link", "scanmadi-section");
     addScrollListener("services-link", "servicesection");
     addScrollListener("contact-link", "contactsection");
+    addScrollListener("blocks-link", "blogsection1");
 
     return () => {
-      const removeScrollListener = (linkId) => {
+      const removeScrollListener = (linkId, sectionId) => {
         const link = document.getElementById(linkId);
         if (link) {
-          link.removeEventListener("click", handleScrollToSection);
+          link.removeEventListener("click", (event) => handleScrollToSection(event, sectionId));
         }
       };
-      removeScrollListener("about-link");
-      removeScrollListener("services-link");
-      removeScrollListener("contact-link");
+
+      removeScrollListener("about-link","scanmadi-section");
+      removeScrollListener("services-link","servicesection");
+      removeScrollListener("contact-link", "contactsection");
+      removeScrollListener("blocks-link", "blogsection1");
     };
   }, []);
 
@@ -272,6 +277,9 @@ const Navbar = () => {
             <a id="services-link" href="#servicesection">Services</a>
           </li>
           <li className="text-black-800 hover:text-red-600 cursor-pointer">
+            <a id="blocks-link" href="#blocksection1">Blog</a>
+          </li>
+          <li className="text-black-800 hover:text-red-600 cursor-pointer">
             <a id="contact-link" href="#contactsection">Contact</a>
           </li>
         </ul>
@@ -279,6 +287,8 @@ const Navbar = () => {
     </nav>
   );
 };
+
+
   
 const handleSignUpScanMadi = () => {
   window.open("https://scanmadi.com/login", "_blank");
@@ -365,14 +375,16 @@ const OurProducts = () => {
               target="__blank"
               className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
             >
-              Try now →
+              {/* Try now → */}
+              Coming Soon
             </CardItem>
             <CardItem
               translateZ={20}
               as="button"
               className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold"
             >
-              Sign up
+              {/* Sign up */}
+              Coming Soon
             </CardItem>
           </div>
         </CardBody>
@@ -409,14 +421,16 @@ const OurProducts = () => {
               target="__blank"
               className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
             >
-              Try now →
+              {/* Try now → */}
+              Coming Soon
             </CardItem>
             <CardItem
               translateZ={20}
               as="button"
               className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold"
             >
-              Sign up
+              {/* Sign up */}
+              Coming Soon
             </CardItem>
           </div>
         </CardBody>
@@ -489,9 +503,6 @@ const ContactUs = () => {
           {/* <p>Phone numbers</p> */}
 
           <h3 className="text-2xl font-semibold m-8">Or Connect through WhatsApp</h3>
-          <div>
-            <img src="/images/left_arrow.gif" className="h-32 -rotate-45"></img>
-          </div>
         </div>
       </div>
     </div>
@@ -631,6 +642,7 @@ export default function Home() {
       <div className="h-screen py-20 w-full">
         <LayoutGrid cards={cards} />
       </div>
+
       <ContactUs>
       </ContactUs>
       <Footer></Footer>
