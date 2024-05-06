@@ -13,7 +13,6 @@ import { HoverEffect } from "../ui/card-hover-effect";
 import { Analytics } from "@vercel/analytics/react"
 import { Button } from "../ui/moving-border";
 
-
 const ka_font = Oswald({
   subsets: ['latin'],
   weight: ['400', '700']
