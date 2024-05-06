@@ -49,7 +49,7 @@ const people = [
   {
     id: 5,
     name: "Minhaj Ahmed",
-    designation: "Marcketing & Operations",
+    designation: "Marketing & Operations",
     image:
       "/images/minhaj.png",
   },
