@@ -460,8 +460,8 @@ const ContactUs = () => {
       <div className="m-2 flex justify-center text-slate-500 ">
         Do you like what we are doing or need any support Please Contact us
       </div>
-    <div id="contactsection" className="lg:flex">
-      <div className="lg:w-1/2">
+    <div id="contactsection" className="lg:flex items-center justify-center ">
+      <div className="m-8">
         <div className="p-4 items-center justify-center">
           <div className="flex items-center justify-center ">
             <PinContainer
@@ -488,7 +488,7 @@ const ContactUs = () => {
         </div>
       </div>
 
-      <div className="lg:w-1/2 m-8">
+      <div className="m-8">
         <div className="p-4">
           <h3 className="text-2xl font-semibold mb-4"> <span className="text-3xl">📞</span> Call Us </h3>
           <span>
