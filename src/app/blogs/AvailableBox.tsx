@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { firestore } from "../../utils/firebase_service";
 import { useRouter } from 'next/navigation'
+import { HoverEffect } from "../../ui/card-hover-effect";
+import { Oswald } from "next/font/google";
+
+const ka_font = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '700']
+})
 
 interface Blog {
   id: string;
@@ -9,7 +16,7 @@ interface Blog {
 }
 
 const AvailableBlogs = () => {
-    const router = useRouter()
+  const router = useRouter()
   const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
@@ -28,17 +35,24 @@ const AvailableBlogs = () => {
     fetchBlogs();
   }, []);
 
-  const goToBlog = (title:string) => {
+  const goToBlog = (title: string) => {
     router.push(`/blogs/${title}`);
   };
 
+  const Blogs = () => {
+    return (
+      <div className="max-w-5xl mx-auto px-8">
+        <HoverEffect items={blogs} />
+      </div>
+    )
+  }
+
   return (
     <div>
-      {blogs.map((blog) => (
-        <div key={blog.id} className="bg-gray-100 p-4 m-2 rounded-lg cursor-pointer" onClick={() => goToBlog(blog.title)}>
-          <h2 className="text-xl font-semibold">{blog.title}</h2>
-        </div>
-      ))}
+      <h1 className={`${ka_font.className} text-6xl lg:text-9xl font-bold text-center text-white relative z-20  mt-20`}>
+        Blogs<span className="text-red-500">.</span>
+      </h1>
+      <Blogs />
     </div>
   );
 };

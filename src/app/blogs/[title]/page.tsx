@@ -54,7 +54,7 @@ const BlogPage = ({ params }: { params: { title: string } }) => {
       const fetchBlog = async () => {
         try {
           console.log("asdasdas")
-          const blogRef = await firestore.collection('blogs').where('title', '==', params.title).get();
+          const blogRef = await firestore.collection('blogs').where('id', '==', params.title).get();
           if (!blogRef.empty) {
             const blogData = blogRef.docs[0].data() as Blog;
             setBlog(blogData);
