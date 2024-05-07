@@ -9,11 +9,7 @@ const ka_font = Oswald({
   weight: ['400', '700']
 })
 
-interface Blog {
-  id: string;
-  title: string;
-  content: string;
-}
+interface Blog { title: string; description: string; link: string; id: string; }[]
 
 const AvailableBlogs = () => {
   const router = useRouter()
