@@ -9,6 +9,7 @@ import Link from "next/link";
 interface Blog {
   title: string;
   content: string;
+  author: string;
   category: string;
 }
 
@@ -79,10 +80,22 @@ const BlogPage = ({ params }: { params: { title: string } }) => {
           ) : notFound ? (
             <p>Blog not found.</p>
           ) : blog ? (
-            <div>
+            <div className='m-4'>
               <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
-              <div className="" dangerouslySetInnerHTML={{ __html: blog.content }} />
+              <div className="" style={{ maxWidth: "1000px" }} dangerouslySetInnerHTML={{
+                __html: `
+              <style>
+                h1 { font-size: 2.25rem; } /* Example font size for h1 */
+                h2 { font-size: 1.875rem; } /* Example font size for h2 */
+                h3 { font-size: 1.5rem; } /* Example font size for h3 */
+                h4 { font-size: 1.25rem; } /* Example font size for h4 */
+                h5 { font-size: 1.125rem; } /* Example font size for h5 */
+                h6 { font-size: 1rem; } /* Example font size for h6 */
+              </style>
+              ${blog.content}
+            ` }} />
               <p className="text-sm text-gray-500 mt-4">Category: {blog.category}</p>
+              <p className="text-sm text-gray-500 mt-4">Author: {blog.author}</p>
             </div>
           ) : null}
         </div>
