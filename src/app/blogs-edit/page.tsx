@@ -26,15 +26,24 @@ export default function BlogsEdit() {
     return (
         <div>
             {user ? (
-                <div className="flex justify-center items-center h-screen">
-                    <img src="/images/hello_gif.gif" alt="Hello GIF" />
-                    <p>Hello, {user.displayName || "user"}!</p>
-                    <AvailableBlogs/>
-                </div>
+                <>
+                    <link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet'></link>
+                    <div className="grid justify-center items-center h-screen m-16">
+                        <div className="flex flex-wrap">
+                            <img className="w-80" src="/images/hello-gif-1.gif" alt="Hello GIF" />
+                            <p className="m-4 mt-20" style={{ fontFamily: "'Boogaloo', sans-serif", fontSize: '5rem' }}>{user.displayName || "user"}  !</p>
+                        </div>
+                        <AvailableBlogs />
+                    </div>
+                </>
             ) : (
-                <div>
-                    <button onClick={handleLogin} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">Login with Google</button>
-                </div>
+                <>
+                    <link href='https://fonts.googleapis.com/css?family=Bigelow Rules' rel='stylesheet'></link>
+                    <div className="grid justify-center">
+                        <div style={{ fontFamily: "'Bigelow Rules', sans-serif", fontSize: '10rem' }}>KACREATIVES BLOGS</div>
+                        <button onClick={handleLogin} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">Login with Google</button>
+                    </div>
+                </>
             )}
         </div>
     );
