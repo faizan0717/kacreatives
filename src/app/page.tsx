@@ -23,7 +23,7 @@ const people = [
   {
     id: 1,
     name: "Faizan Ahmed",
-    designation: "CEO",
+    designation: "😎",
     image: "/images/faizan.png"
   },
   {
