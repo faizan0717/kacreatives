@@ -72,7 +72,6 @@ const Navbar = () => {
 export default function easyfy() {
 
     return (
-
         <div>
             <Navbar />
             <div className='mt-20' >
@@ -89,7 +88,7 @@ export default function easyfy() {
                         <br></br>
                         <p>1. Installation: You can download the binary from our GitHub releases page.</p>
                         <div className="my-2">
-                            <Link className="" href="https://github.com/faizan0717/easyfy">
+                            <Link href="https://github.com/faizan0717/easyfy">
                                 <p className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View on GitHub</p>
                             </Link>
                         </div>
@@ -103,10 +102,10 @@ export default function easyfy() {
                         <img className="my-2" src="/images/syetm_veriables.png" alt="" />
                         <p>3. Create a shortcut.</p>
                         <p>
-                            * Just Type easyfy or easyfy "command which you want to create shortcut for"
+                            * Just Type easyfy or easyfy &quot;command which you want to create shortcut for&quot;
                         </p>
                         <p className="text-lime-400">
-                            eg: easyfy "npm run build && firebase deploy"
+                            eg: easyfy &quot;npm run build &amp;&amp; firebase deploy&quot;
                         </p>
                         <br></br>
                         <h1 className="text-xl font-bold mb-4">Conclusion</h1>
