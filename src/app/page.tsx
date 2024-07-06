@@ -349,18 +349,18 @@ const OurProducts = () => {
             translateZ="50"
             className="text-xl font-bold text-neutral-600 text-red-500"
           >
-            CleanMyData
+            easyfy
           </CardItem>
           <CardItem
             as="p"
             translateZ="60"
             className="text-sm max-w-sm mt-2 text-neutral-300"
           >
-            A web application which will clean your scraped data to improve your Ai/ML training.
+          Introducing Easyfy – a powerful command-line shortcut manager designed to make your life easier.
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4 border">
             <Image
-              src="/images/comming_soon.gif"
+              src="/images/easyfyy.png"
               height="1000"
               width="1000"
               className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -371,20 +371,20 @@ const OurProducts = () => {
             <CardItem
               translateZ={20}
               as={Link}
-              href="https://twitter.com/mannupaaji"
+              href="https://Kacreatives.in/easyfy"
               target="__blank"
               className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
             >
-              {/* Try now → */}
-              Coming Soon
+              How to Download →
             </CardItem>
             <CardItem
               translateZ={20}
-              as="button"
+              as={Link}
+              href="https://github.com/faizan0717/easyfy"
+              target="__blank"
               className="px-4 py-2 rounded-xl bg-white text-black text-xs font-bold"
             >
-              {/* Sign up */}
-              Coming Soon
+              Download
             </CardItem>
           </div>
         </CardBody>
