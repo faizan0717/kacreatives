@@ -60,20 +60,6 @@ const people = [
     image:
       "/images/sufiyan.png",
   },
-  {
-    id: 7,
-    name: "Bashar",
-    designation: "Engineering",
-    image:
-      "/images/bashar.png",
-  },
-  {
-    id: 8,
-    name: "Tasleem",
-    designation: "Engineering",
-    image:
-      "/images/tasleem.png",
-  },
 ];
 
 const SkeletonOne = () => {
